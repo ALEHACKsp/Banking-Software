@@ -15,6 +15,7 @@ namespace wTF
     //To ADD: BETTER GRAPHICS AND PAYMENT SYSTEM
     public partial class UserPanel : Form
     {
+        private Form1 f1 = (Form1)Form1.ActiveForm;
         string connect = Form1.connect;
         string usr = Form1.usr;
         string pass= Form1.pass;
@@ -27,18 +28,7 @@ namespace wTF
         public UserPanel()
         {
             InitializeComponent();
-            con.Open();
-            MySqlCommand cmd = new MySqlCommand(expression+pass,con);
-            MySqlDataReader rdr = cmd.ExecuteReader();
-            if (rdr.Read())
-            {
-                Name.Text = rdr.GetString(1);
-                Surname.Text = rdr.GetString(2);
-                Balance.Text = rdr.GetInt32(6).ToString();
-              
-            }
-            rdr.Close();
-            con.Close();
+            RefreshBalance();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -81,11 +71,14 @@ namespace wTF
                 }
                 rdr.Close();
                 con.Close();
+                RefreshBalance();
+                MessageBox.Show(this, "Succesfull Transaction", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
-                MessageBox.Show("NOT ENOUGH BALANCE!");
+                MessageBox.Show(this, "Failed Transaction", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+           
         }
         private int RecieverBalance() {
 
@@ -136,6 +129,26 @@ namespace wTF
 
 
          
+        }
+        private void RefreshBalance() {
+            expression = "SELECT * FROM users where password=";
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand(expression + pass, con);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+            if (rdr.Read())
+            {
+                label5.Text = rdr.GetString(1);
+                Surname.Text = rdr.GetString(2);
+                Balance.Text = rdr.GetInt32(6).ToString();
+
+            }
+            rdr.Close();
+            con.Close();
+        }
+
+        private void UserPanel_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            f1.Close();
         }
     }
 
