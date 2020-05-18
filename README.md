@@ -5,13 +5,13 @@ This program was built using [Visual Studio](https://visualstudio.microsoft.com/
   This is a bank application that i made by myself.
 
 ### Features:  
- -[x] Log In
+ - [x] Log In
  
- -[] Send Money
+ - [ ] Send Money
  
- -[] Recieve Money
+ - [ ] Recieve Money
  
- -[] Change Password/Username
+ - [ ] Change Password/Username
  
 ## Can i use this?
 
