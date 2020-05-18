@@ -7,7 +7,7 @@ This program was built using [Visual Studio](https://visualstudio.microsoft.com/
 ### Features:  
  - [x] Log In
  
- - [ ] Send Money
+ - [x] Send Money
  
  - [ ] Recieve Money
  
