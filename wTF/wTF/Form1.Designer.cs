@@ -59,6 +59,7 @@
             // 
             this.username.Location = new System.Drawing.Point(158, 86);
             this.username.Name = "username";
+            this.username.PasswordChar = '*';
             this.username.Size = new System.Drawing.Size(138, 20);
             this.username.TabIndex = 2;
             // 
@@ -66,6 +67,7 @@
             // 
             this.password.Location = new System.Drawing.Point(158, 133);
             this.password.Name = "password";
+            this.password.PasswordChar = '*';
             this.password.Size = new System.Drawing.Size(138, 20);
             this.password.TabIndex = 3;
             // 

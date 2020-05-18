@@ -139,7 +139,7 @@ namespace wTF
             {
                 label5.Text = rdr.GetString(1);
                 Surname.Text = rdr.GetString(2);
-                Balance.Text = rdr.GetInt32(6).ToString();
+                Balance.Text = rdr.GetInt32(6).ToString() + " $";
 
             }
             rdr.Close();

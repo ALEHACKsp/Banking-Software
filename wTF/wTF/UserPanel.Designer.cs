@@ -103,6 +103,7 @@
             // 
             this.otpBox.Location = new System.Drawing.Point(365, 15);
             this.otpBox.Name = "otpBox";
+            this.otpBox.PasswordChar = '*';
             this.otpBox.Size = new System.Drawing.Size(100, 20);
             this.otpBox.TabIndex = 5;
             // 
@@ -158,7 +159,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(606, 237);
+            this.label4.Location = new System.Drawing.Point(601, 255);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 13);
             this.label4.TabIndex = 11;
