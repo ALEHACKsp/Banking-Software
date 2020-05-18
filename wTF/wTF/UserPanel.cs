@@ -26,10 +26,11 @@ namespace wTF
             con.Open();
             MySqlCommand cmd = new MySqlCommand(expression+pass,con);
             MySqlDataReader rdr = cmd.ExecuteReader();
-
             if (rdr.Read())
             {
-                MessageBox.Show(rdr.GetInt32(6).ToString());
+                Name.Text = rdr.GetString(1);
+                Surname.Text = rdr.GetString(2);
+                Balance.Text = rdr.GetInt32(6).ToString();
             }
         }
     }
