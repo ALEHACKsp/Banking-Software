@@ -15,7 +15,7 @@ This program was built using [Visual Studio](https://visualstudio.microsoft.com/
  
 ## Can i use this?
 
-***This has the free license so you can download and use it. I would not reccommend for banks though.***
+***This has the free license so you can download and use it. I would not recommend for banks though.***
 
 ## What is this for?
   This is just for a portfolio.
