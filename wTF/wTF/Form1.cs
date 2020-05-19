@@ -14,7 +14,7 @@ namespace wTF
     public partial class Form1 : Form
     {
         private UserPanel userPanel;
-
+        private Register regPanel;
 
         public static string usr;
         public static string pass;
@@ -52,6 +52,19 @@ namespace wTF
                     break;
                 }
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            button2.Enabled = false;
+            MessageBox.Show(this,"The bank will contact you.","RESET REQUEST",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            regPanel = new Register();
+            regPanel.Show();
         }
     }
 }
