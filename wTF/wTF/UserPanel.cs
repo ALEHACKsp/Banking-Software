@@ -11,7 +11,6 @@ using System.Windows.Forms;
 
 namespace wTF
 {
-    //To ADD: ADD OPTION TO SEND/RECIEVE MONEY
     //To ADD: BETTER GRAPHICS AND PAYMENT SYSTEM
     public partial class UserPanel : Form
     {
@@ -19,7 +18,8 @@ namespace wTF
         string connect = Form1.connect;
         string usr = Form1.usr;
         string pass= Form1.pass;
-        string expression = "SELECT * FROM users where password="; 
+        string expression = "SELECT * FROM users where password=";
+        string reason = "SERVER ERROR";
         int otp = 0;
         int recBalance = 0;
         int userBalance = 0;
@@ -33,54 +33,18 @@ namespace wTF
 
         private void button1_Click(object sender, EventArgs e)
         {
-            userBalance = SenderBalance();
-            if (userBalance >= Convert.ToInt32(transferAmmount.Text))
-            {
-
-
-                recBalance = RecieverBalance();
-                con.Open();
-                otp = Convert.ToInt32(otpBox.Text);
-                expression = "SELECT * FROM users where otp=";
-                MySqlCommand cmd = new MySqlCommand(expression + otp, con);
-                MySqlDataReader rdr = cmd.ExecuteReader();
-                if (rdr.Read())
-                {
-                    int ammount = Convert.ToInt32(transferAmmount.Text);
-                    expression = $"UPDATE users SET balance = {(recBalance + ammount).ToString()} where otp =" + otp;
-                    rdr.Close();
-                    cmd = new MySqlCommand(expression, con);
-                    cmd.ExecuteNonQuery();
-                }
-                rdr.Close();
-                con.Close();
-
-                con.Open();
-              
-                expression = "SELECT * FROM users where password=";
-                cmd = new MySqlCommand(expression + pass, con);
-                rdr = cmd.ExecuteReader();
-                if (rdr.Read())
-                {
-                    
-                    int ammount = Convert.ToInt32(transferAmmount.Text);
-                    expression = $"UPDATE users SET balance = {(userBalance - ammount).ToString()} where password=" + pass;
-                    rdr.Close();
-                    cmd = new MySqlCommand(expression, con);
-                    cmd.ExecuteNonQuery();
-                }
-                rdr.Close();
-                con.Close();
-                RefreshBalance();
-                MessageBox.Show(this, "Succesfull Transaction", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            else
-            {
-                MessageBox.Show(this, "Failed Transaction", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-           
+            SendMoney();
         }
         private int RecieverBalance() {
+            try
+            {
+                con.Close();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
 
             con.Open();
             otp = Convert.ToInt32(otpBox.Text);
@@ -106,7 +70,15 @@ namespace wTF
         }
         private int SenderBalance() {
 
-            
+            try
+            {
+                con.Close();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
             otp = Convert.ToInt32(otpBox.Text);
             expression = "SELECT balance FROM users WHERE password=";
             con.Open();
@@ -149,6 +121,84 @@ namespace wTF
         private void UserPanel_FormClosed(object sender, FormClosedEventArgs e)
         {
             f1.Close();
+        }
+        private void SendMoney() {
+
+            userBalance = SenderBalance();
+            if (userBalance >= Convert.ToInt32(transferAmmount.Text))//Check if balance is enough
+            {
+                if (OtpChecker())
+                {
+                    recBalance = RecieverBalance();
+                    con.Open();
+                    otp = Convert.ToInt32(otpBox.Text);
+                    expression = "SELECT * FROM users where otp=";
+                    MySqlCommand cmd = new MySqlCommand(expression + otp, con);
+                    MySqlDataReader rdr = cmd.ExecuteReader();
+                    if (rdr.Read())
+                    {
+                        int ammount = Convert.ToInt32(transferAmmount.Text);
+                        expression = $"UPDATE users SET balance = {(recBalance + ammount).ToString()} where otp =" + otp;
+                        rdr.Close();
+                        cmd = new MySqlCommand(expression, con);
+                        cmd.ExecuteNonQuery();
+                    }
+                    rdr.Close();
+                    con.Close();
+
+                    con.Open();
+
+                    expression = "SELECT * FROM users where password=";
+                    cmd = new MySqlCommand(expression + pass, con);
+                    rdr = cmd.ExecuteReader();
+                    if (rdr.Read())
+                    {
+
+                        int ammount = Convert.ToInt32(transferAmmount.Text);
+                        expression = $"UPDATE users SET balance = {(userBalance - ammount).ToString()} where password=" + pass;
+                        rdr.Close();
+                        cmd = new MySqlCommand(expression, con);
+                        cmd.ExecuteNonQuery();
+                    }
+                    rdr.Close();
+                    con.Close();
+                    RefreshBalance();
+                    MessageBox.Show(this, "Succesfull Transaction", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    MessageBox.Show(this,"Cannot find user from OTP","ERROR",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                reason = "Not enough money.";
+                MessageBox.Show(this, "Failed Transaction > "+reason, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+        }
+        bool OtpChecker() {
+
+            con.Open();
+            otp = Convert.ToInt32(otpBox.Text);
+            expression = "SELECT * FROM users where otp=";
+            MySqlCommand cmd = new MySqlCommand(expression + otp, con);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+            if (rdr.Read()) {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            f1.Show();
+            this.Hide();
+            
         }
     }
 
