@@ -45,6 +45,7 @@ namespace wTF
             MySqlDataReader rdr = cmd.ExecuteReader();
             con.Close();
             rdr.Close();
+            MessageBox.Show(username.ToString()+" - USERNAME " + password.ToString()+" - PASSWORD" ,"");
             Form1 f1 = new Form1();
             f1.Show();
             this.Hide();

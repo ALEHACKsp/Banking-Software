@@ -29,6 +29,7 @@ namespace wTF
         {
             InitializeComponent();
             RefreshBalance();
+            GetUserOtp();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -199,6 +200,20 @@ namespace wTF
             f1.Show();
             this.Hide();
             
+        }
+        private void GetUserOtp() {
+            con.Open();
+            expression = "SELECT * FROM users where password="+pass;
+            MySqlCommand cmd = new MySqlCommand(expression, con);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+            if (rdr.Read())
+            {
+                label7.Text = rdr.GetInt32(5).ToString();
+            }
+            else
+            {
+                MessageBox.Show("FAIL");
+            }
         }
     }
 
