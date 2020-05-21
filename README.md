@@ -6,7 +6,7 @@ This program was built using [Visual Studio](https://visualstudio.microsoft.com/
 
 ### Progress
 
-90% done
+100% done
 
 ### Features:  
  - [x] Log In
