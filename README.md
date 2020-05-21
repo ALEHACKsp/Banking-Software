@@ -21,3 +21,5 @@ This program was built using [Visual Studio](https://visualstudio.microsoft.com/
 
 ## What is this for?
   This is just for a portfolio.
+# NOTE
+##  Please note that this project does not aim for security but only for functionality.
