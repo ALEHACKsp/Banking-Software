@@ -13,6 +13,8 @@ This program was built using [Visual Studio](https://visualstudio.microsoft.com/
  
  - [x] Recieve Money
  
+ - [x] Register a new account
+ 
  - [ ] Change Password/Username
  
 ## Can i use this?
