@@ -1,4 +1,4 @@
-# Banking-Software (READY FOR DOWNLOADING)
+# Banking-Software 
 This program was built using [Visual Studio](https://visualstudio.microsoft.com/) and [XAMPP](https://www.apachefriends.org/index.html)
 ## What is this?
 
