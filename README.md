@@ -4,6 +4,10 @@ This program was built using [Visual Studio](https://visualstudio.microsoft.com/
 
   This is a bank application that i made by myself.
 
+### Progress
+
+90% done
+
 ### Features:  
  - [x] Log In
  
