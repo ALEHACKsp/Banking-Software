@@ -27,7 +27,15 @@ namespace wTF
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                con.Close();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
             con.Open();
 
             

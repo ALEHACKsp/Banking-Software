@@ -31,7 +31,6 @@
             this.Balance = new System.Windows.Forms.Label();
             this.Name = new System.Windows.Forms.Label();
             this.Surname = new System.Windows.Forms.Label();
-            this.Recieve = new System.Windows.Forms.Label();
             this.Send = new System.Windows.Forms.Label();
             this.otpBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -49,7 +48,7 @@
             this.Balance.AutoSize = true;
             this.Balance.BackColor = System.Drawing.Color.Transparent;
             this.Balance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Balance.Location = new System.Drawing.Point(8, 93);
+            this.Balance.Location = new System.Drawing.Point(4, 44);
             this.Balance.Name = "Balance";
             this.Balance.Size = new System.Drawing.Size(168, 25);
             this.Balance.TabIndex = 0;
@@ -71,29 +70,18 @@
             this.Surname.AutoSize = true;
             this.Surname.BackColor = System.Drawing.Color.Transparent;
             this.Surname.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Surname.Location = new System.Drawing.Point(84, 9);
+            this.Surname.Location = new System.Drawing.Point(328, 5);
             this.Surname.Name = "Surname";
             this.Surname.Size = new System.Drawing.Size(92, 25);
             this.Surname.TabIndex = 2;
             this.Surname.Text = "Surname";
-            // 
-            // Recieve
-            // 
-            this.Recieve.AutoSize = true;
-            this.Recieve.BackColor = System.Drawing.Color.Transparent;
-            this.Recieve.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Recieve.Location = new System.Drawing.Point(300, 93);
-            this.Recieve.Name = "Recieve";
-            this.Recieve.Size = new System.Drawing.Size(82, 25);
-            this.Recieve.TabIndex = 4;
-            this.Recieve.Text = "Recieve";
             // 
             // Send
             // 
             this.Send.AutoSize = true;
             this.Send.BackColor = System.Drawing.Color.Transparent;
             this.Send.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Send.Location = new System.Drawing.Point(300, 13);
+            this.Send.Location = new System.Drawing.Point(4, 116);
             this.Send.Name = "Send";
             this.Send.Size = new System.Drawing.Size(59, 25);
             this.Send.TabIndex = 3;
@@ -101,7 +89,7 @@
             // 
             // otpBox
             // 
-            this.otpBox.Location = new System.Drawing.Point(365, 15);
+            this.otpBox.Location = new System.Drawing.Point(69, 118);
             this.otpBox.Name = "otpBox";
             this.otpBox.PasswordChar = '*';
             this.otpBox.Size = new System.Drawing.Size(100, 20);
@@ -109,7 +97,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(577, 13);
+            this.button1.Location = new System.Drawing.Point(281, 116);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 6;
@@ -121,7 +109,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(401, 38);
+            this.label1.Location = new System.Drawing.Point(105, 141);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 13);
             this.label1.TabIndex = 7;
@@ -131,7 +119,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(495, 38);
+            this.label2.Location = new System.Drawing.Point(199, 141);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 13);
             this.label2.TabIndex = 9;
@@ -139,7 +127,7 @@
             // 
             // transferAmmount
             // 
-            this.transferAmmount.Location = new System.Drawing.Point(471, 15);
+            this.transferAmmount.Location = new System.Drawing.Point(175, 118);
             this.transferAmmount.Name = "transferAmmount";
             this.transferAmmount.Size = new System.Drawing.Size(100, 20);
             this.transferAmmount.TabIndex = 8;
@@ -149,7 +137,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(9, 61);
+            this.label3.Location = new System.Drawing.Point(5, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 20);
             this.label3.TabIndex = 10;
@@ -159,7 +147,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(601, 255);
+            this.label4.Location = new System.Drawing.Point(597, 138);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 13);
             this.label4.TabIndex = 11;
@@ -170,7 +158,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(8, 9);
+            this.label5.Location = new System.Drawing.Point(248, 5);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 25);
             this.label5.TabIndex = 12;
@@ -178,7 +166,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(520, 250);
+            this.button2.Location = new System.Drawing.Point(516, 133);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 13;
@@ -191,7 +179,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(659, 277);
+            this.ClientSize = new System.Drawing.Size(659, 159);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -201,7 +189,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.otpBox);
-            this.Controls.Add(this.Recieve);
             this.Controls.Add(this.Send);
             this.Controls.Add(this.Surname);
             this.Controls.Add(this.Balance);
@@ -217,7 +204,6 @@
         private System.Windows.Forms.Label Balance;
         private System.Windows.Forms.Label Name;
         private System.Windows.Forms.Label Surname;
-        private System.Windows.Forms.Label Recieve;
         private System.Windows.Forms.Label Send;
         private System.Windows.Forms.TextBox otpBox;
         private System.Windows.Forms.Button button1;
