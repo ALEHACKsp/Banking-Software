@@ -66,6 +66,7 @@ namespace wTF
         {
             button2.Enabled = false;
             MessageBox.Show(this,"The bank will contact you.","RESET REQUEST",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            // Add your own function here to handle this situation.
         }
 
         private void button3_Click(object sender, EventArgs e)
