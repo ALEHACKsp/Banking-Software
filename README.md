@@ -39,7 +39,7 @@ This program was built using [Visual Studio](https://visualstudio.microsoft.com/
 
 ## Can i use this?
 
-***This has the free license so you can download and use it. I would not recommend for banks though.***
+***This has the free license so you can download and use it. It was made as a side project for fun/portfolio.***
 
 ## What is this for?
 
