@@ -41,9 +41,7 @@ This program was built using [Visual Studio](https://visualstudio.microsoft.com/
 
 ***This has the free license so you can download and use it. It was made as a side project for fun/portfolio.***
 
-## What is this for?
 
-  This is just for a portfolio.
   
 # NOTE
-##  Please note that this project does not aim for security but only for functionality.
+Please note that this project does not aim for security but only for functionality.
